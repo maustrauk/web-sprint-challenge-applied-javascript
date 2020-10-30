@@ -12,7 +12,9 @@ axios
     const articles = data.data.articles;
     for (const value of Object.entries(articles)) {
         value[1].forEach(element => {
-            document.querySelector(".cards-container").appendChild(singleCard(element)); // Use your function to create a card for each of the articles, and append each card to the DOM.
+            const card = singleCard(element);
+            card.classList.add(value[0]);
+            document.querySelector(".cards-container").appendChild(card); // Use your function to create a card for each of the articles, and append each card to the DOM.
         });
     }
 })

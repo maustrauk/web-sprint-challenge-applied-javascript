@@ -29,5 +29,12 @@ function topicCreator (data) {
     tab.classList.add('tab');
     tab.textContent = data;
 
+    tab.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.style.display = "none");
+        const clickedCards = document.querySelectorAll(`.${data}`);
+        clickedCards.forEach(card => card.style.display = "block");
+    })
+
     return tab;
 }
