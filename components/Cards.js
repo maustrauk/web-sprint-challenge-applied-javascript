@@ -72,7 +72,7 @@ function singleCard (artObj) {
     return card;
 } 
 
-export function errorMsg () {
+ function errorMsg () {
     const msgBox = document.createElement('div')
     msgBox.classList.add('error-msg');
     msgBox.style.color = 'red';

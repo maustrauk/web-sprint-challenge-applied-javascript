@@ -1,4 +1,3 @@
-import errorMsg from  "./Cards"
 // STEP 2: Create tabs
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
@@ -39,4 +38,13 @@ function topicCreator (data) {
     })
 
     return tab;
+}
+
+function errorMsg () {
+    const msgBox = document.createElement('div')
+    msgBox.classList.add('error-msg');
+    msgBox.style.color = 'red';
+    msgBox.textContent = 'Something went wrong! Details are in console';
+
+    return msgBox;
 }
