@@ -8,8 +8,6 @@
 //    <span class="temp">98°</span>
 //  </div>
 //
-// Use your function to create a header
-// and append it to the DOM inside the div.header-container
 
 function header() {
     const header = document.createElement('div');
@@ -31,5 +29,8 @@ function header() {
 
     return header;
 }
+
+// Use your function to create a header
+// and append it to the DOM inside the div.header-container
 
 document.querySelector('.header-container').appendChild(header());

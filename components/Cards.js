@@ -5,6 +5,21 @@
 // You will be creating a card for each article in the response.
 // This won't be as easy as just iterating over an array though.
 //
+
+axios
+.get("https://lambda-times-api.herokuapp.com/articles") 
+.then( data => {
+    const articles = data.data.articles;
+    for (const value of Object.entries(articles)) {
+        value[1].forEach(element => {
+            document.querySelector(".cards-container").appendChild(singleCard(element)); // Use your function to create a card for each of the articles, and append each card to the DOM.
+        });
+    }
+})
+.catch(err => {
+    console.log("Error: ",err);
+})
+
 // Write a function that takes a single article object and returns the following markup:
 //
 // <div class="card">
@@ -17,23 +32,7 @@
 //   </div>
 // </div>
 //
-// Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-//
-// Use your function to create a card for each of the articles, and append each card to the DOM.
 
-axios
-.get("https://lambda-times-api.herokuapp.com/articles")
-.then( data => {
-    const articles = data.data.articles;
-    for (const value of Object.entries(articles)) {
-        value[1].forEach(element => {
-            document.querySelector(".cards-container").appendChild(singleCard(element));
-        });
-    }
-})
-.catch(err => {
-    console.log("Error: ",err);
-})
 
 function singleCard (artObj) {
     const card = document.createElement('div');
@@ -61,6 +60,7 @@ function singleCard (artObj) {
 
     imgContainer.appendChild(img);
 
+    // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
     card.addEventListener('click', () => {
         console.log("Headline: ", headline.textContent);
     })
