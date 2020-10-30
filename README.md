@@ -49,7 +49,7 @@ The EventListener interface represents an object that can handle an event dispat
 
 Answer:
 
-To be able to use array prototype functions and methods on them.
+To be able to use array methods on them.
 
 5. What is a component?
 
