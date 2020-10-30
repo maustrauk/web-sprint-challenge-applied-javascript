@@ -19,7 +19,9 @@ axios
     }
 })
 .catch(err => {
+    document.querySelector('.errors-container').appendChild(errorMsg());
     console.log("Error: ",err);
+
 })
 
 // Write a function that takes a single article object and returns the following markup:
@@ -69,3 +71,13 @@ function singleCard (artObj) {
 
     return card;
 } 
+
+export function errorMsg () {
+    const msgBox = document.createElement('div')
+    msgBox.classList.add('error-msg');
+    msgBox.style.color = 'red';
+    msgBox.textContent = 'Something went wrong! Details are in console';
+
+    return msgBox;
+}
+

@@ -1,3 +1,4 @@
+import errorMsg from  "./Cards"
 // STEP 2: Create tabs
 // -----------------------
 // Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
@@ -15,6 +16,7 @@ axios
     })
 })
 .catch(err => {
+    document.querySelector('.errors-container').appendChild(errorMsg());
     console.log("Error: ",err);
 })
 
