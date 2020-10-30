@@ -35,7 +35,24 @@
     transform: translate(0, -50%);
   }
   img {
-    .width-100();
+    width: 100%;
     display: none;
+  }
+}
+
+.animation {
+  animation-name: myAnimation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes myAnimation {
+  0% {
+    width : 0%;
+  }
+  100% {
+    width : 100%;
   }
 }
